@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.active {
+    display: block;
+}
+
+.game{
+    width: 500px;
+    height: 202px;
+    background: #f1f1f1;
+    border: 1px solid black;
+    position: relative;
+}
+
+.score{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 16px;
+}
+
+.score span{
+    font-size: 20px;
+    font-weight: 700;
+    color: red;
+}
+
+.record{
+    position: absolute;
+    right: 50px;
+    top: 10px;
+    font-size: 20px;
+    color: red;
+    display: none;
+    font-weight: 700;
+}
+
+.record span{
+    font-size: 20px;
+    font-weight: 700;
+    color: red;
+    margin-left: 5px;
+}
+
+.buttons{
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+button{
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 16px;
+    background: none;
+    outline: none;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.start{
+    color: green;
+    border: 2px solid green;
+    display: block;
+}
+
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+
+.end{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(150, 0, 0, 0.3);
+    display: none;
+    pointer-events: none;
+}
+
+.end h1{
+    font-size: 30px;
+    text-align: center;
+    color: #f1f1f1;
+    text-transform: uppercase;
+    font-family: Arial, Helvetica, sans-serif;
+    letter-spacing: 7px;
+    line-height: 250px;
+}
+
+.restart{
+    color: violet;
+    border: 2px solid violet;
+    display: none;
+}
+
+.dino{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    background: url(img/dino.png);
+    background-size: 50px 50px;
+    top: 150px;
+}
+
+.cactus{
+    width: 20px;
+    height: 50px;
+    position: relative;
+    background: url(img/cactus.png);
+    background-size: 20px 50px;
+    top: 100px;
+    left: 480px;
+}
+
+.cactus-move{
+    animation: cactus-move 1.5s infinite linear;
+}
+
+.jump{
+    animation: dino-jump 0.5s linear;
+}
+
+@keyframes dino-jump{
+    0%, 100%{
+        top: 150px;
+    }
+    50%{
+        top: 70px;
+    }
+}
+
+@keyframes cactus-move{
+    to{
+        left: 0;
+    }
+}
